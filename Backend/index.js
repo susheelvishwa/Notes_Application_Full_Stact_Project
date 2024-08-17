@@ -2,9 +2,14 @@ import dotenv from "dotenv";
 dotenv.config();
 import express from "express";
 import connection from "./config/db.js";
+import cors from "cors";
 
 const app = express();
 const PORT = process.env.PORT || 5000;
+
+app.use(cors({
+  origin :'*'
+}))
 
 app.get("/", (req, res) => {
   res.send("server is running fine")
