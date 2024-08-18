@@ -36,6 +36,16 @@
 
 ## What is CORS?
 
+```javascript
+import cors from "cors";
+
+app.use(cors({
+  origin :'*'
+}))
+
+```
+
+
 CORS stands for **Cross-Origin Resource Sharing**. It's a security feature implemented by web browsers to control how web pages from one origin (like `localhost:3000`) can interact with resources from another origin (like `localhost:4000`).
 
 - **Origin** refers to a combination of a domain, protocol, and port. For example, `http://localhost:3000` and `http://localhost:4000` are considered different origins even though they are on the same domain and protocol, because their ports are different.
@@ -102,6 +112,32 @@ This configuration allows requests from any origin. The `*` wildcard indicates t
 >## 7. Jsonwebtoken (JWT)
 **Purpose:** A library to create and verify JSON Web Tokens.  
 **Use Case:** JWTs are a popular method for implementing authentication and authorization. They allow you to securely transmit information between parties as a JSON object. When a user logs in, a JWT is generated and sent to the client, which can then be used to access protected routes and resources.
+
+# Jsonwebtoken (JWT)
+
+## Overview
+
+**jsonwebtoken (JWT)** is a library in Node.js used for creating and verifying JSON Web Tokens (JWTs). JWTs are a compact, URL-safe means of representing claims to be transferred between two parties. The claims in a JWT are encoded as a JSON object that is used as the payload of a JSON Web Signature (JWS) structure or as the plaintext of a JSON Web Encryption (JWE) structure, enabling the claims to be digitally signed or integrity-protected with a Message Authentication Code (MAC) and/or encrypted.
+
+## Purpose
+
+The primary purpose of JWTs is to facilitate secure communication between two parties. This is typically done through:
+
+1. **Authentication:** When a user logs in, the server generates a JWT and sends it to the client. The client then includes the JWT in the header of subsequent requests to access protected routes or resources.
+2. **Authorization:** Once authenticated, JWTs can be used to verify if the user has the necessary permissions to access specific resources.
+
+## Structure of a JWT
+
+A JWT consists of three parts:
+
+1. **Header:** Contains metadata about the token, typically specifying the type of token (JWT) and the hashing algorithm used (e.g., HMAC SHA256 or RSA).
+
+   ```json
+   {
+     "alg": "HS256",
+     "typ": "JWT"
+   }
+
 
 >## How They Work Together
 
