@@ -1,5 +1,4 @@
 # Notes_Application_Full_Stact_Project
-Notes_Application_Full_Stact_Project
 
 1 - register and login system
 2 - user schema and model
